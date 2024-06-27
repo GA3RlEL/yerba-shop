@@ -1,0 +1,11 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-section {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
