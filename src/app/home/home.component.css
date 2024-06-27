@@ -2,10 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
-.top-section {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
+.spacing {
+  margin: 3rem 0;
 }
