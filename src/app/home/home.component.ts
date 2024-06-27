@@ -4,6 +4,7 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { TrustedLogosComponent } from './trusted-logos/trusted-logos.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { FooterComponent } from './footer/footer.component';
+import { CustomerTestimonialsComponent } from './customer-testimonials/customer-testimonials.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     TrustedLogosComponent,
     BenefitsComponent,
     FooterComponent,
+    CustomerTestimonialsComponent,
   ],
 })
 export class HomeComponent {}

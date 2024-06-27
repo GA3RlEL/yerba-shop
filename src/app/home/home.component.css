@@ -8,3 +8,18 @@
 .spacing {
   margin: 3rem 0;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: #788263;
+}
+
+.wrapper hr {
+  width: 50%;
+  height: 1px;
+  margin: 0 auto;
+  border: none;
+  background-color: #dde3d1;
+}

@@ -1,0 +1,75 @@
+.wrapper {
+  background-color: #788263;
+  color: #dde3d1;
+}
+
+.content {
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading h3 {
+  font-size: 3rem;
+}
+
+.heading p {
+  font-size: 2rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  background-color: #dde3d1;
+  color: black;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.testimonial img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.review {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.occupation {
+  font-size: 1.25rem;
+  opacity: 0.75;
+}
