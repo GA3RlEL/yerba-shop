@@ -21,4 +21,6 @@ h2 {
 .brands img {
   width: auto;
   height: 8rem;
+  opacity: 50%;
+  filter: grayscale(1);
 }

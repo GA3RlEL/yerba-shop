@@ -13,6 +13,7 @@ p	1
   align-items: center;
   padding: 0.5rem 2rem;
   position: fixed;
+  z-index: 999;
   width: 100%;
   top: 0;
   left: 0;
@@ -33,4 +34,19 @@ ul {
 
 li {
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+hr {
+  width: 0%;
+  border: none;
+  height: 1px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+li:hover hr,
+li:active hr {
+  width: 80%;
 }
