@@ -15,7 +15,7 @@ hr {
   margin: 0 auto;
   border: none;
   height: 1px;
-  background-color: #868e96;
+  background-color: var(--gray-color);
 }
 
 .title {
@@ -40,4 +40,20 @@ ul {
 
 li {
   font-size: 1.15rem;
+}
+
+@media (max-width: 820px) {
+  :host {
+    width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+  }
 }

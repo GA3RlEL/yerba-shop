@@ -1,5 +1,5 @@
 app-home {
   display: block;
   height: 100%;
-  background-color: #788263;
+  background-color: var(--main-color);
 }

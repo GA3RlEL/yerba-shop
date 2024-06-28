@@ -9,7 +9,7 @@
 
 h2 {
   font-size: 3rem;
-  color: #868e96;
+  color: var(--gray-color);
 }
 
 .brands {
@@ -23,4 +23,48 @@ h2 {
   height: 8rem;
   opacity: 50%;
   filter: grayscale(1);
+}
+
+@media (max-width: 1330px) {
+  .brands img {
+    width: auto;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .brands img {
+    width: auto;
+    height: 4rem;
+  }
+  .brands {
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .brands img {
+    width: auto;
+    height: 3rem;
+  }
+
+  .brands {
+    gap: 6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands img {
+    width: auto;
+    height: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: var(--gray-color);
+  }
+
+  .brands {
+    gap: 4rem;
+  }
 }

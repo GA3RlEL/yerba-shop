@@ -1,6 +1,6 @@
 <h1>YerbaVibes</h1>
 <nav>
-  <ul>
+  <ul class="desktop" [class.active]="showMenu">
     <li>
       <p>Home</p>
       <hr />
@@ -18,11 +18,18 @@
       <hr />
     </li>
   </ul>
+  <img
+    (click)="onShowMenu()"
+    src="assets/images/chevron-down.svg"
+    class="icon mobile"
+    [class.activeButton]="showMenu"
+    alt="menu"
+  />
 </nav>
 <div class="right-panel">
   <ul>
-    <li>cart</li>
-    <li>searchbar</li>
-    <li>user</li>
+    <li><img class="icon" src="assets/images/cart.svg" alt="cart" /></li>
+    <li><img class="icon" src="assets/images/search.svg" alt="search" /></li>
+    <li><img class="icon" src="assets/images/person.svg" alt="user" /></li>
   </ul>
 </div>

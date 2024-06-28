@@ -1,7 +1,5 @@
 :host {
-  display: flex;
-  gap: 1.2rem;
-  color: #dde3d1;
+  color: var(--second-color);
 }
 
 h1 {
@@ -31,7 +29,7 @@ p {
 
 .btn {
   padding: 2rem 4rem;
-  border: 1px solid #dde3d1;
+  border: 1px solid var(--second-color);
   font-size: 2rem;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -40,21 +38,21 @@ p {
 
 .learn-more {
   background-color: transparent;
-  color: #dde3d1;
+  color: var(--second-color);
 }
 
 .learn-more:hover {
   color: black;
-  background-color: #dde3d1;
+  background-color: var(--second-color);
 }
 
 .order {
-  background-color: #dde3d1;
+  background-color: var(--second-color);
 }
 
 .order:hover {
   background-color: transparent;
-  color: #dde3d1;
+  color: var(--second-color);
 }
 
 .right-panel {
@@ -74,8 +72,60 @@ img {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #dde3d1;
+  background-color: var(--second-color);
   border-radius: 50%;
   z-index: 1;
   transform: scale(1.02);
+}
+
+@media (max-width: 1330px) {
+  img {
+    width: 35rem;
+    height: 35rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    font-weight: 900;
+  }
+
+  p {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  img {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    font-weight: 900;
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    width: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  .btn {
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  img {
+    width: 20rem;
+    height: 20rem;
+  }
 }

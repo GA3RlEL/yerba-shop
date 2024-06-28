@@ -1,6 +1,6 @@
 .wrapper {
-  background-color: #788263;
-  color: #dde3d1;
+  background-color: var(--main-color);
+  color: var(--second-color);
 }
 
 .content {
@@ -36,7 +36,7 @@
 .testimonial {
   display: flex;
   flex-direction: column;
-  background-color: #dde3d1;
+  background-color: var(--second-color);
   color: black;
   align-items: center;
   justify-content: space-around;
@@ -72,4 +72,36 @@
 .occupation {
   font-size: 1.25rem;
   opacity: 0.75;
+}
+
+@media (max-width: 1330px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .testimonial img {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .review {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .heading h3 {
+    font-size: 2.5rem;
+  }
+
+  .heading p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

@@ -17,8 +17,8 @@ p	1
   width: 100%;
   top: 0;
   left: 0;
-  color: #dde3d1;
-  background-color: #788263;
+  color: var(--second-color);
+  background-color: var(--main-color);
 }
 
 h1 {
@@ -49,4 +49,53 @@ hr {
 li:hover hr,
 li:active hr {
   width: 80%;
+}
+
+.mobile {
+  display: none;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .desktop {
+    position: absolute;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%, -100%);
+    background-color: var(--second-color);
+    color: black;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+    border-end-end-radius: 8px;
+    border-end-start-radius: 8px;
+    padding: 4rem 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .active {
+    top: 0%;
+    transform: translate(-50%, 0);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .nav {
+    position: relative;
+  }
+  .mobile {
+    display: block;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .activeButton {
+    transform: rotate(180deg);
+  }
 }
