@@ -60,6 +60,13 @@ li:active hr {
   height: 2.5rem;
 }
 
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: var(--second-color);
+}
+
 @media (max-width: 600px) {
   .desktop {
     position: absolute;
@@ -97,5 +104,12 @@ li:active hr {
 
   .activeButton {
     transform: rotate(180deg);
+  }
+
+  a:link,
+  a:hover,
+  a:visited {
+    text-decoration: none;
+    color: black;
   }
 }
