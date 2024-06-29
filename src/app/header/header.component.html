@@ -10,17 +10,17 @@
       <hr />
     </li>
     <li>
-      <a><p>About</p></a>
+      <a routerLink="/about"><p>About</p></a>
       <hr />
     </li>
     <li>
-      <a><p>Contact</p></a>
+      <a routerLink="/contact"><p>Contact</p></a>
       <hr />
     </li>
   </ul>
   <img
     (click)="onShowMenu()"
-    src="assets/images/chevron-down.svg"
+    src="assets/images/header/chevron-down.svg"
     class="icon mobile"
     [class.activeButton]="showMenu"
     alt="menu"
@@ -28,8 +28,12 @@
 </nav>
 <div class="right-panel">
   <ul>
-    <li><img class="icon" src="assets/images/cart.svg" alt="cart" /></li>
-    <li><img class="icon" src="assets/images/search.svg" alt="search" /></li>
-    <li><img class="icon" src="assets/images/person.svg" alt="user" /></li>
+    <li><img class="icon" src="assets/images/header/cart.svg" alt="cart" /></li>
+    <li>
+      <img class="icon" src="assets/images/header/search.svg" alt="search" />
+    </li>
+    <li>
+      <img class="icon" src="assets/images/header/person.svg" alt="user" />
+    </li>
   </ul>
 </div>

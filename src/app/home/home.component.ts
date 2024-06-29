@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from '../header/header.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { TrustedLogosComponent } from './trusted-logos/trusted-logos.component';
 import { BenefitsComponent } from './benefits/benefits.component';

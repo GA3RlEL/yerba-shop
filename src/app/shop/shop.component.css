@@ -1,0 +1,53 @@
+.wrapper {
+  background-color: var(--main-color);
+  height: 100%;
+  padding-top: 5rem;
+}
+
+.carousel {
+  width: 60%;
+  background-color: var(--second-color);
+  margin: 0 auto;
+  padding: 2rem 6rem;
+  border-radius: 8px;
+}
+
+.item {
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content h2 {
+  font-size: 3rem;
+}
+
+.content p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.content a:link {
+  border: 1px solid var(--main-color);
+  text-decoration: none;
+  background-color: var(--main-color);
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+}
+
+a:visited {
+  border: 1px solid var(--main-color);
+  color: black;
+}
+
+img {
+  width: 40rem;
+  height: 40rem;
+}
