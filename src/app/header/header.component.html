@@ -2,19 +2,19 @@
 <nav>
   <ul class="desktop" [class.active]="showMenu">
     <li>
-      <a routerLink="/"><p>Home</p></a>
+      <a (click)="onCloseMenu()" routerLink="/"><p>Home</p></a>
       <hr />
     </li>
     <li>
-      <a routerLink="/shop"><p>Shop</p></a>
+      <a (click)="onCloseMenu()" routerLink="/shop"><p>Shop</p></a>
       <hr />
     </li>
     <li>
-      <a routerLink="/about"><p>About</p></a>
+      <a (click)="onCloseMenu()" routerLink="/about"><p>About</p></a>
       <hr />
     </li>
     <li>
-      <a routerLink="/contact"><p>Contact</p></a>
+      <a (click)="onCloseMenu()" routerLink="/contact"><p>Contact</p></a>
       <hr />
     </li>
   </ul>

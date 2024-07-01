@@ -3,7 +3,7 @@ import { HeaderComponent } from '../header/header.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { TrustedLogosComponent } from './trusted-logos/trusted-logos.component';
 import { BenefitsComponent } from './benefits/benefits.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from '../footer/footer.component';
 import { CustomerTestimonialsComponent } from './customer-testimonials/customer-testimonials.component';
 import { CtaComponent } from './cta/cta.component';
 

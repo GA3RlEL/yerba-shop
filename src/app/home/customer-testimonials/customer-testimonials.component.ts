@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { customers } from './customers';
+import { customers } from '../../data/customers';
 
 @Component({
   selector: 'app-customer-testimonials',

@@ -49,6 +49,12 @@ hr {
 li:hover hr,
 li:active hr {
   width: 80%;
+  margin: 0 auto;
+}
+
+.router-underline {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .mobile {

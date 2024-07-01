@@ -1,18 +1,54 @@
 <div class="wrapper">
   <div class="carousel">
-    <div class="item">
-      <div class="content">
-        <h2>New Yerba Mate from Yaguar Now Available!</h2>
-        <p>
-          Discover the latest addition to our collection - the premium yerba
-          mate from Yaguar. Known for its rich flavor and exceptional quality,
-          Yaguar yerba mate offers a unique blend that is perfect for both
-          seasoned yerba drinkers and newcomers alike. Try it today and
-          experience the authentic taste of Yaguar!
-        </p>
-        <a href="#"><p>Shop Now!</p></a>
+    @for (item of carousels; track item.id) {
+    <div class="item-wrapper" [style.left]="currentSlidePos + '%'">
+      <div class="item">
+        <div class="content">
+          <h2>{{ item.header }}</h2>
+          <p>
+            {{ item.content }}
+          </p>
+          <a href="#"><p>Shop Now!</p></a>
+        </div>
+        <img
+          class="carousel-image"
+          [src]="'assets/images/shop/carousel/' + item.image + '.png'"
+          [alt]="item.image"
+        />
       </div>
-      <img src="assets/images/shop/carousel/jaguar.png" alt="3 jaguar yerba" />
+    </div>
+    }
+    <img
+      src="assets/images/shop/carousel/arrow-right.svg"
+      alt="arrow right navigation"
+      class="arrow arrow-right"
+      (click)="onNextSlide()"
+    />
+    <img
+      src="assets/images/shop/carousel/arrow-left.svg"
+      alt="arrow left navigation"
+      class="arrow arrow-left"
+      (click)="onPreviousSlide()"
+    />
+  </div>
+
+  <hr />
+
+  <div class="categories">
+    <h2>What would you like to buy?</h2>
+    <div class="categories-items">
+      @for (category of categories; track category.id) {
+      <div class="category-item">
+        <img
+          class="category-image"
+          [src]="'assets/images/shop/categories/' + category.image + '.jpg'"
+          [alt]="category.image"
+        />
+        <div class="category-outline">
+          <a href="#">{{ category.title }}</a>
+        </div>
+      </div>
+      }
     </div>
   </div>
 </div>

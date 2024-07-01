@@ -11,6 +11,7 @@ export const routes: Routes = [
   {
     path: 'shop',
     component: ShopComponent,
+    children: [],
   },
 
   {
