@@ -44,9 +44,12 @@
           [src]="'assets/images/shop/categories/' + category.image + '.jpg'"
           [alt]="category.image"
         />
-        <div class="category-outline">
-          <a href="#">{{ category.title }}</a>
-        </div>
+        <a [routerLink]="[category.link]"
+          ><div class="category-outline">
+            <h2></h2>
+            {{ category.title }}
+          </div></a
+        >
       </div>
       }
     </div>

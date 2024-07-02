@@ -1,0 +1,85 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.product-content p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product-add {
+  display: flex;
+  gap: 2rem;
+}
+
+.product-add input {
+  width: 60%;
+}
+
+.product-add .add-button {
+  width: 100%;
+  border: none;
+  border: solid 1px var(--gray-color);
+  background-color: var(--second-color);
+  transition: all 0.3s ease-in-out;
+}
+.product-add .add-button:hover {
+  background-color: var(--hover-color);
+  color: white;
+}
+
+.quantity-box {
+  border: 1px solid var(--gray-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-box input {
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  text-align: center;
+}
+
+.quantity-box input:focus {
+  outline: none;
+  border: none;
+}
+
+.quantity-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.quantity-box button {
+  border: none;
+  background-color: transparent;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

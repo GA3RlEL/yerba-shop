@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { carousels, categories } from '../data/shop';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })

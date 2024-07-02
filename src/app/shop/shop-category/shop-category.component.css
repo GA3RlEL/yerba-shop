@@ -1,0 +1,24 @@
+.wrapper {
+  background-color: var(--main-color);
+  min-height: 100%;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-bottom: 5rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: auto 1fr;
+  grid-auto-rows: minmax(auto, max-content);
+  width: 60%;
+  margin: 0 auto;
+  gap: 5rem;
+}
+
+app-products {
+  grid-column: 2;
+  grid-row: 1/-1;
+}

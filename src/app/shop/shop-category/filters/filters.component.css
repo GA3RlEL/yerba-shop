@@ -1,0 +1,94 @@
+:host {
+  background-color: var(--second-color);
+  padding: 2rem;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.category-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-list ul li {
+  display: flex;
+  gap: 1.3rem;
+  font-size: 1.5rem;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: black;
+}
+
+.category-price {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.category-price span {
+  font-size: 3rem;
+}
+
+.currency-box {
+  position: relative;
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+input[type="number"] {
+  width: 7rem;
+  padding: 1rem 0.5rem;
+  border: none;
+  width: 85%;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+.currency {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

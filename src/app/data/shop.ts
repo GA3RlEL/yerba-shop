@@ -16,6 +16,6 @@ export const carousels = [
 ];
 
 export const categories = [
-  { id: 1, title: 'Yerba Mate', image: 'yerba' },
-  { id: 2, title: 'Accessories', image: 'accessories' },
+  { id: 1, title: 'Yerba Mate', image: 'yerba', link: 'yerba-mate' },
+  { id: 2, title: 'Accessories', image: 'accessories', link: 'accessories' },
 ];

@@ -54,7 +54,7 @@ a:link {
 }
 
 a:hover {
-  background-color: #545b45;
+  background-color: var(--hover-color);
 }
 
 @media (max-width: 1330px) {
