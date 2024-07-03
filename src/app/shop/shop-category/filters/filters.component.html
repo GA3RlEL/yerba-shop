@@ -72,12 +72,19 @@
           name="min-price"
           id="min-price"
           placeholder="from"
+          [formControl]="minPrice"
         />
         <p class="currency">$</p>
       </div>
       <span>-</span>
       <div class="currency-box">
-        <input type="number" name="max-price" id="max-price" placeholder="to" />
+        <input
+          type="number"
+          name="max-price"
+          id="max-price"
+          placeholder="to"
+          [formControl]="maxPrice"
+        />
         <p class="currency">$</p>
       </div>
     </div>

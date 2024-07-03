@@ -8,10 +8,12 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    title: 'YerbaVibes | Home',
   },
   {
     path: 'shop',
     component: ShopComponent,
+    title: 'YerbaVibes | Shop',
   },
 
   {

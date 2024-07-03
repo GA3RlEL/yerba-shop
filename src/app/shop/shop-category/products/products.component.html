@@ -1,13 +1,33 @@
 <div class="wrapper">
   <div class="products">
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
-    <app-product [testProduct]="testProduct" />
+    @for (product of paginatedItem; track product.id) {
+    <app-product [product]="product" />
+    }
+  </div>
+  <div class="pagination">
+    <button type="button">
+      <img
+        src="assets/images/shop/carousel/arrow-left.svg"
+        alt="arrow-left"
+        (click)="onPreviousPage()"
+      />
+    </button>
+    @for (_ of pages; track $index) {
+    <a
+      [routerLinkActive]="'active'"
+      [routerLink]="[]"
+      [queryParams]="{ page: $index + 1 }"
+      type="button"
+    >
+      <span class="pagination-item">{{ $index + 1 }}</span>
+    </a>
+    }
+    <button type="button">
+      <img
+        src="assets/images/shop/carousel/arrow-right.svg"
+        alt="arrow-right"
+        (click)="onNextPage()"
+      />
+    </button>
   </div>
 </div>

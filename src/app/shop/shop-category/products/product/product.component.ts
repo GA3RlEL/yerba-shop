@@ -9,13 +9,15 @@ import { Product } from '../../../../data/products';
   styleUrl: './product.component.css',
 })
 export class ProductComponent {
-  testProduct = input.required<Product>();
+  product = input.required<Product>();
   quantity = signal(1);
 
   onIncreaseQuantity() {
     this.quantity.update((oldValue) => oldValue + 1);
   }
   onDecreaseQuantity() {
-    this.quantity.update((oldValue) => oldValue - 1);
+    if (this.quantity() > 1) {
+      this.quantity.update((oldValue) => oldValue - 1);
+    }
   }
 }

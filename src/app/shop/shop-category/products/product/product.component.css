@@ -83,3 +83,16 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.discount {
+  opacity: 0.8;
+  text-decoration: line-through;
+  font-size: 1.1rem !important;
+}
+
+.price-box {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}

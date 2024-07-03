@@ -11,3 +11,38 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
 }
+
+.pagination {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.pagination-item {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.pagination img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.pagination button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 700;
+  font-size: 1.5rem;
+}

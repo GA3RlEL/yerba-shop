@@ -2,16 +2,22 @@
   <img
     [src]="
       'assets/images/shop/products/' +
-      testProduct().type +
+      product().type +
       '/' +
-      testProduct().image +
+      product().image +
       '.jpg'
     "
-    [alt]="testProduct().image"
+    [alt]="product().image"
   />
   <div class="product-content">
-    <p>{{ testProduct().name }}</p>
-    <p>{{ testProduct().price }} $</p>
+    <p>{{ product().name }}</p>
+    <div class="price-box">
+      <p [class.discount]="product().isDiscount">{{ product().price }} $</p>
+      @if(product().isDiscount){
+      <p>{{ product().discountPrice }} $</p>
+      }
+    </div>
+
     <div class="product-add">
       <div class="quantity-box">
         <button type="button">
