@@ -1,16 +1,19 @@
 <div class="product">
   <img
     [src]="
-      'assets/images/shop/products/' +
-      product().type +
-      '/' +
-      product().image +
-      '.jpg'
+      'assets/images/shop/products/' + product().type + '/' + product().image
     "
     [alt]="product().image"
   />
   <div class="product-content">
-    <p>{{ product().name }}</p>
+    <p>
+      {{ product().name }}
+      {{
+        product().weight >= 1000
+          ? product().weight / 1000 + " kg"
+          : product().weight + " g"
+      }}
+    </p>
     <div class="price-box">
       <p [class.discount]="product().isDiscount">{{ product().price }} $</p>
       @if(product().isDiscount){

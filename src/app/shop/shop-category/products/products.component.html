@@ -1,4 +1,5 @@
 <div class="wrapper">
+  @if(allProducts.length>0){
   <div class="products">
     @for (product of paginatedItem; track product.id) {
     <app-product [product]="product" />
@@ -30,4 +31,9 @@
       />
     </button>
   </div>
+  }@else {
+  <div class="no-products">
+    <p>There is no products!</p>
+  </div>
+  }
 </div>

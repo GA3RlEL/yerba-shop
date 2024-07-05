@@ -8,22 +8,69 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductsService {
   products = signal<Product[]>(products);
   filteredProducts = signal<Product[]>(this.products());
+  originalProducts = signal<Product[]>(this.products());
   router = inject(Router);
   route = inject(ActivatedRoute);
 
-  filerProducts(minPrice: number, maxPrice: number) {
-    const newTable = this.products().filter((product) => {
-      if (product.isDiscount && product.discountPrice) {
-        return (
-          product.discountPrice >= minPrice && product.discountPrice <= maxPrice
-        );
-      }
-      if (product.price) {
-        return product.price >= minPrice && product.price <= maxPrice;
-      }
-      return product;
-    });
-    this.filteredProducts.set(newTable);
+  currentWeights: number[] = [];
+  currentBrands: string[] = [];
+  currentMinPrice: number = 1;
+  currentMaxPrice: number = 100;
+
+  filterProducts() {
+    let filtered = this.originalProducts();
+
+    if (this.currentWeights.length > 0) {
+      filtered = filtered.filter((product) =>
+        this.currentWeights.includes(product.weight)
+      );
+    }
+
+    if (this.currentBrands.length > 0) {
+      filtered = filtered.filter((product) =>
+        this.currentBrands.includes(product.brand)
+      );
+    }
+
+    if (this.currentMinPrice !== null && this.currentMaxPrice !== null) {
+      filtered = filtered.filter((product) => {
+        if (product.isDiscount && product.discountPrice) {
+          return (
+            product.discountPrice >= this.currentMinPrice &&
+            product.discountPrice <= this.currentMaxPrice
+          );
+        }
+        if (product.price) {
+          return (
+            product.price >= this.currentMinPrice &&
+            product.price <= this.currentMaxPrice
+          );
+        }
+        return false;
+      });
+    }
+
+    this.filteredProducts.set(filtered);
+    this.restarPage();
+  }
+
+  filterProductsByWeight(weights: number[]) {
+    this.currentWeights = weights;
+    this.filterProducts();
+  }
+
+  filterProductsByBrand(brands: string[]) {
+    this.currentBrands = brands;
+    this.filterProducts();
+  }
+
+  filterProductsByPrice(minPrice: number, maxPrice: number) {
+    this.currentMinPrice = minPrice;
+    this.currentMaxPrice = maxPrice;
+    this.filterProducts();
+  }
+
+  restarPage() {
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { page: 1 },

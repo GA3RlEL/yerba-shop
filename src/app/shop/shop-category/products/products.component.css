@@ -46,3 +46,14 @@ a {
   font-weight: 700;
   font-size: 1.5rem;
 }
+
+.no-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.no-products p {
+  font-size: 3rem;
+}
