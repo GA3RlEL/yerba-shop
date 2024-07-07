@@ -77,4 +77,8 @@ export class ProductsService {
       queryParamsHandling: 'merge',
     });
   }
+
+  returnOneItem(id: string) {
+    return this.products().at(+id - 1);
+  }
 }

@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="left">
+      <img
+        [src]="
+          'assets/images/shop/products/' + product?.type + '/' + product?.image
+        "
+        [alt]="product?.image"
+      />
+    </div>
+    <div class="right">
+      <h2>{{ product?.name }}</h2>
+      <div class="details">
+        <p>Mass: {{ product?.weight }}</p>
+        <p>
+          Price:
+          {{ product?.isDiscount ? product?.discountPrice : product?.price }} $
+        </p>
+      </div>
+      <app-product-add (quantityOutput)="readQuantity($event)" />
+    </div>
+  </div>
+</div>

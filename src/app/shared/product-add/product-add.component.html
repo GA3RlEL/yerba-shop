@@ -1,0 +1,31 @@
+<div class="product-add">
+  <div class="quantity-box">
+    <button type="button">
+      <img
+        class="quantity-icon"
+        src="assets/images/shop/products/ui/minus.svg"
+        alt="minus"
+        (click)="onDecreaseQuantity()"
+      />
+    </button>
+    <input
+      type="number"
+      name="quantity"
+      id="quantity"
+      min="1"
+      [value]="quantity()"
+    />
+    <button type="button">
+      <img
+        class="quantity-icon"
+        src="assets/images/shop/products/ui/plus.svg"
+        alt="minus"
+        (click)="onIncreaseQuantity()"
+      />
+    </button>
+  </div>
+
+  <button (click)="emitValue()" class="add-button" type="button">
+    Add to cart
+  </button>
+</div>

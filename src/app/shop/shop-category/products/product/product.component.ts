@@ -1,23 +1,19 @@
 import { Component, input, signal } from '@angular/core';
 import { Product } from '../../../../data/products';
+import { RouterLink } from '@angular/router';
+import { ProductAddComponent } from '../../../../shared/product-add/product-add.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
+  imports: [RouterLink, ProductAddComponent],
 })
 export class ProductComponent {
   product = input.required<Product>();
-  quantity = signal(1);
 
-  onIncreaseQuantity() {
-    this.quantity.update((oldValue) => oldValue + 1);
-  }
-  onDecreaseQuantity() {
-    if (this.quantity() > 1) {
-      this.quantity.update((oldValue) => oldValue - 1);
-    }
+  readQuantity(data: number) {
+    console.log(data);
   }
 }

@@ -1,54 +1,30 @@
 <div class="product">
-  <img
-    [src]="
-      'assets/images/shop/products/' + product().type + '/' + product().image
-    "
-    [alt]="product().image"
-  />
+  <a [routerLink]="['/product', product().id]">
+    <img
+      [src]="
+        'assets/images/shop/products/' + product().type + '/' + product().image
+      "
+      [alt]="product().image"
+    />
+  </a>
   <div class="product-content">
-    <p>
-      {{ product().name }}
-      {{
-        product().weight >= 1000
-          ? product().weight / 1000 + " kg"
-          : product().weight + " g"
-      }}
-    </p>
-    <div class="price-box">
-      <p [class.discount]="product().isDiscount">{{ product().price }} $</p>
-      @if(product().isDiscount){
-      <p>{{ product().discountPrice }} $</p>
-      }
-    </div>
+    <a href="">
+      <p>
+        {{ product().name }}
+        {{
+          product().weight >= 1000
+            ? product().weight / 1000 + " kg"
+            : product().weight + " g"
+        }}
+      </p>
 
-    <div class="product-add">
-      <div class="quantity-box">
-        <button type="button">
-          <img
-            class="quantity-icon"
-            src="assets/images/shop/products/ui/minus.svg"
-            alt="minus"
-            (click)="onDecreaseQuantity()"
-          />
-        </button>
-        <input
-          type="number"
-          name="quantity"
-          id="quantity"
-          min="1"
-          [value]="quantity()"
-        />
-        <button type="button">
-          <img
-            class="quantity-icon"
-            src="assets/images/shop/products/ui/plus.svg"
-            alt="minus"
-            (click)="onIncreaseQuantity()"
-          />
-        </button>
+      <div class="price-box">
+        <p [class.discount]="product().isDiscount">{{ product().price }} $</p>
+        @if(product().isDiscount){
+        <p>{{ product().discountPrice }} $</p>
+        }
       </div>
-
-      <button class="add-button" type="button">Add to cart</button>
-    </div>
+    </a>
+    <app-product-add (quantityOutput)="readQuantity($event)" />
   </div>
 </div>

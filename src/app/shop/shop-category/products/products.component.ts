@@ -3,6 +3,7 @@ import { Product } from '../../../data/products';
 import { ProductComponent } from './product/product.component';
 import { ProductsService } from '../../../services/products.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -16,12 +17,16 @@ export class ProductsComponent implements OnInit {
   router = inject(Router);
   route = inject(ActivatedRoute);
   destroyRef = inject(DestroyRef);
+  title = inject(Title);
 
   itemsPerPage = 9;
   page: number = 0;
+  param!: string | null;
 
   get allProducts() {
-    return this.productsService.filteredProducts();
+    return this.productsService
+      .filteredProducts()
+      .filter((product) => product.type === this.param);
   }
 
   get paginatedItem() {
@@ -35,6 +40,16 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const sub2 = this.route.paramMap.subscribe((params) => {
+      let title = params.get('category')?.replace('-', ' ');
+      if (title) {
+        title = title[0].toUpperCase() + title.slice(1);
+        this.title.setTitle('YerbaVibes | ' + title);
+      }
+
+      this.param = params.get('category');
+    });
+
     const sub = this.route.queryParams.subscribe((params) => {
       this.page = params['page'] ? +params['page'] : 1;
       if (!params['page']) {
@@ -48,6 +63,7 @@ export class ProductsComponent implements OnInit {
 
     this.destroyRef.onDestroy(() => {
       sub.unsubscribe();
+      sub2.unsubscribe();
     });
   }
 
