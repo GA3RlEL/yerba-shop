@@ -4,6 +4,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ShopComponent } from './shop/shop.component';
 import { ShopCategoryComponent } from './shop/shop-category/shop-category.component';
 import { ProductPreviewComponent } from './shop/shop-category/products/product-preview/product-preview.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,12 @@ export const routes: Routes = [
   {
     path: 'product/:id',
     component: ProductPreviewComponent,
+  },
+
+  {
+    path: 'cart',
+    component: CartComponent,
+    title: 'YerbaVibes | Cart',
   },
 
   {

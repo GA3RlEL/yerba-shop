@@ -1,0 +1,96 @@
+.wrapper {
+  height: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 6rem;
+  border-radius: 8px;
+  background-color: white;
+  width: 60%;
+}
+
+.empty-cart {
+  margin-top: 2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.empty-cart a:link {
+  color: black;
+}
+
+.empty-cart a:active,
+.empty-cart a:visited {
+  color: black;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  font-size: 1.25rem;
+}
+
+thead tr th {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+thead tr th:first-child {
+  text-align: left;
+}
+
+.cart-item {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+td {
+  font-size: 1.25rem;
+}
+
+td {
+  text-align: center;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+.details h2 {
+  font-size: 1.5rem;
+}
+
+.item-image {
+  width: 6rem;
+  height: 6rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.quantity img,
+.close {
+  width: 2rem;
+  height: 2rem;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

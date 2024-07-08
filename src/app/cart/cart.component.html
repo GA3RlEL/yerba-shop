@@ -1,0 +1,102 @@
+<div class="wrapper">
+  <div class="content">
+    <h2>Your Cart</h2>
+    @if (cart().length>0) {
+    <div class="cart">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Value</th>
+            <th>Quantity</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of cart(); track item.id) {
+          <tr>
+            <td class="cart-item">
+              <img
+                [src]="
+                  'assets/images/shop/products/' +
+                  item.item.type +
+                  '/' +
+                  item.item.image
+                "
+                [alt]="item.item.image"
+                class="item-image"
+              />
+              <div class="details">
+                <h2>{{ item.item.name }}</h2>
+                <p>
+                  Netto mass:
+                  {{
+                    item.item.weight < 1000
+                      ? item.item.weight + "g"
+                      : item.item.weight / 1000 + "kg"
+                  }}
+                </p>
+              </div>
+            </td>
+            <td>
+              <p>
+                {{
+                  item.item.isDiscount
+                    ? item.item.discountPrice
+                    : item.item.price
+                }}
+                $
+              </p>
+            </td>
+            <td>
+              <p>
+                {{
+                  item.item.isDiscount
+                    ? item.item.discountPrice
+                      ? item.item.discountPrice * item.quantity
+                      : "0"
+                    : item.item.price * item.quantity
+                }}
+                $
+              </p>
+            </td>
+            <td>
+              <div class="quantity">
+                <button (click)="onDecreaseQuantity(item)" type="button">
+                  <img
+                    src="assets/images/shop/products/ui/minus.svg"
+                    alt="minus"
+                  />
+                </button>
+                <p>{{ item.quantity }}</p>
+                <button (click)="onIncreaseQuantity(item)" type="button">
+                  <img
+                    src="assets/images/shop/products/ui/plus.svg"
+                    alt="plus"
+                  />
+                </button>
+              </div>
+            </td>
+            <td>
+              <button type="button" (click)="onDeleteItem(item)">
+                <img
+                  class="close"
+                  src="assets/images/shop/products/ui/close.svg"
+                  alt="delete item"
+                />
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    } @else {
+    <div class="empty-cart">
+      <h3>Your Cart is empty add some products</h3>
+      <a [routerLink]="['/shop']">Go to shop</a>
+    </div>
+    }
+  </div>
+</div>

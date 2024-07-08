@@ -1,9 +1,10 @@
 import { Component, output, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-add',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './product-add.component.html',
   styleUrl: './product-add.component.css',
 })
@@ -23,5 +24,6 @@ export class ProductAddComponent {
 
   emitValue() {
     this.quantityOutput.emit(this.quantity());
+    this.quantity.set(1);
   }
 }

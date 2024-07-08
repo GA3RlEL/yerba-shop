@@ -8,14 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductsService {
   products = signal<Product[]>(products);
   filteredProducts = signal<Product[]>(this.products());
-  originalProducts = signal<Product[]>(this.products());
-  router = inject(Router);
-  route = inject(ActivatedRoute);
+  private originalProducts = signal<Product[]>(this.products());
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
-  currentWeights: number[] = [];
-  currentBrands: string[] = [];
-  currentMinPrice: number = 1;
-  currentMaxPrice: number = 100;
+  private currentWeights: number[] = [];
+  private currentBrands: string[] = [];
+  private currentMinPrice: number = 1;
+  private currentMaxPrice: number = 100;
 
   filterProducts() {
     let filtered = this.originalProducts();
