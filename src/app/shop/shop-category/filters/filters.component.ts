@@ -3,6 +3,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { ProductsService } from '../../../services/products.service';
 import { NgFor } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'aside[app-filters]',
@@ -15,7 +16,6 @@ export class FiltersComponent implements OnInit {
   productsService = inject(ProductsService);
   minPrice = new FormControl(1);
   maxPrice = new FormControl(100);
-
   selectedBrands: string[] = [];
   selectedWeights: number[] = [];
 

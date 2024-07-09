@@ -25,7 +25,12 @@
     </button>
   </div>
 
-  <button (click)="emitValue()" class="add-button" type="button">
-    Add to cart
+  <button
+    (click)="emitValue()"
+    class="add-button"
+    [disabled]="isDisabled"
+    type="button"
+  >
+    {{ isDisabled ? "✔" : "Add to cart" }}
   </button>
 </div>

@@ -5,6 +5,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopCategoryComponent } from './shop/shop-category/shop-category.component';
 import { ProductPreviewComponent } from './shop/shop-category/products/product-preview/product-preview.component';
 import { CartComponent } from './cart/cart.component';
+import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,12 @@ export const routes: Routes = [
     path: 'cart',
     component: CartComponent,
     title: 'YerbaVibes | Cart',
+  },
+
+  {
+    path: 'about',
+    component: AboutComponent,
+    title: 'YerbaVibes | About',
   },
 
   {

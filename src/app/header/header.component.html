@@ -28,16 +28,32 @@
 </nav>
 <div class="right-panel">
   <ul>
-    <li>
+    <li class="cart-box">
       <a [routerLink]="['cart']">
-        <img class="icon" src="assets/images/header/cart.svg" alt="cart"
+        <img
+          class="icon menu-icons"
+          src="assets/images/header/cart.svg"
+          alt="cart"
       /></a>
+      @if(cartLength>0){
+      <div class="cart-amount">
+        <p>{{ cartLength < 10 ? cartLength : "9+" }}</p>
+      </div>
+      }
     </li>
     <li>
-      <img class="icon" src="assets/images/header/search.svg" alt="search" />
+      <img
+        class="icon menu-icons"
+        src="assets/images/header/search.svg"
+        alt="search"
+      />
     </li>
     <li>
-      <img class="icon" src="assets/images/header/person.svg" alt="user" />
+      <img
+        class="icon menu-icons"
+        src="assets/images/header/person.svg"
+        alt="user"
+      />
     </li>
   </ul>
 </div>

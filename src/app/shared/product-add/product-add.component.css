@@ -19,6 +19,11 @@
   color: white;
 }
 
+.product-add .add-button:disabled.add-button:hover {
+  background-color: var(--second-color);
+  color: black;
+}
+
 .quantity-box {
   border: 1px solid var(--gray-color);
   display: flex;

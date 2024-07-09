@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductAddComponent {
   quantity = signal(1);
+  isDisabled = false;
 
   quantityOutput = output<number>();
 
@@ -25,5 +26,9 @@ export class ProductAddComponent {
   emitValue() {
     this.quantityOutput.emit(this.quantity());
     this.quantity.set(1);
+    this.isDisabled = true;
+    setTimeout(() => {
+      this.isDisabled = false;
+    }, 1000);
   }
 }

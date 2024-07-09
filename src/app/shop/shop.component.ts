@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { carousels, categories } from '../data/shop';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -13,6 +13,7 @@ export class ShopComponent implements OnInit {
   interval: any;
   categories = categories;
   carousels = carousels;
+  type!: string;
 
   currentSlidePos = 0;
   currentSlide = 1;
