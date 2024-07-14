@@ -37,10 +37,6 @@ export class CartComponent {
     return this.cartService.getCartItems;
   }
 
-  ngOnInit() {
-    console.log(this.cart());
-  }
-
   calculateTotalPrice() {}
 
   onDecreaseQuantity(item: CartItem) {

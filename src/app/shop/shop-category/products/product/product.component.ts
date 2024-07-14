@@ -16,7 +16,6 @@ export class ProductComponent {
   product = input.required<Product>();
 
   readQuantity(data: number) {
-    console.log(data);
     this.cartService.addItemToCart(this.product(), data);
   }
 }

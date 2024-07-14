@@ -3,6 +3,7 @@ import { ProductsService } from '../../../../services/products.service';
 import { Product } from '../../../../data/products';
 import { ActivatedRoute } from '@angular/router';
 import { ProductAddComponent } from '../../../../shared/product-add/product-add.component';
+import { CartService } from '../../../../services/cart.service';
 
 @Component({
   selector: 'app-product-preview',
@@ -16,6 +17,7 @@ export class ProductPreviewComponent implements OnInit {
   route = inject(ActivatedRoute);
   destroyRef = inject(DestroyRef);
   product!: Product | undefined;
+  private cartService = inject(CartService);
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -25,6 +27,6 @@ export class ProductPreviewComponent implements OnInit {
   }
 
   readQuantity(data: number) {
-    console.log(data);
+    if (this.product) this.cartService.addItemToCart(this.product, data);
   }
 }

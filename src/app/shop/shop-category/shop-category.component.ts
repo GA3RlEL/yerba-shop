@@ -27,7 +27,7 @@ export class ShopCategoryComponent implements OnInit {
       const category = params.get('category');
       if (category) {
         this.type = category;
-        console.log(category);
+        // console.log(category);
       }
     });
   }

@@ -58,7 +58,7 @@ export class CartService {
       }
     });
 
-    console.log(this.cartItems());
+    // console.log(this.cartItems());
     localStorage.setItem('cart', JSON.stringify(this.cartItems()));
   }
 
