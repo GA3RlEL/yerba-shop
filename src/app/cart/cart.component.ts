@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { Product, products } from '../data/products';
+import { Product } from '../data/products';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { DecimalPipe } from '@angular/common';
 
 type CartItem = {
   id: string;
@@ -12,12 +13,25 @@ type CartItem = {
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DecimalPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent {
   private cartService = inject(CartService);
+  get totalPrice() {
+    let price = 0;
+    this.cart().forEach((i) => {
+      if (i.item.isDiscount) {
+        if (i.item.discountPrice) {
+          price += i.item.discountPrice * i.quantity;
+        }
+      } else {
+        price += i.item.price * i.quantity;
+      }
+    });
+    return price;
+  }
 
   get cart() {
     return this.cartService.getCartItems;
@@ -26,6 +40,8 @@ export class CartComponent {
   ngOnInit() {
     console.log(this.cart());
   }
+
+  calculateTotalPrice() {}
 
   onDecreaseQuantity(item: CartItem) {
     if (item.quantity === 1) {

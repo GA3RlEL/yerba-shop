@@ -8,6 +8,14 @@
   padding-bottom: 5rem;
 }
 
+.outline {
+  visibility: hidden;
+}
+
+.mobile-filters {
+  visibility: hidden;
+}
+
 .content {
   display: grid;
   grid-template-columns: 20rem 1fr;
@@ -18,7 +26,69 @@
   gap: 5rem;
 }
 
+aside {
+  position: static;
+  opacity: 1;
+}
+
+.mobile-button {
+  position: fixed;
+  display: none;
+  height: 5rem;
+  width: 5rem;
+}
+
 app-products {
   grid-column: 2;
   grid-row: 1/-1;
+}
+
+@media (max-width: 1330px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .outline {
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .mobile-button {
+    display: block;
+    top: 12%;
+    right: 2%;
+    border: 1px solid var(--gray-color);
+    background-color: var(--second-color);
+    padding: 0.25rem;
+  }
+
+  aside {
+    visibility: visible;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 300;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .outline-active {
+    opacity: 1;
+  }
 }

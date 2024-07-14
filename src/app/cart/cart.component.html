@@ -54,9 +54,10 @@
                 {{
                   item.item.isDiscount
                     ? item.item.discountPrice
-                      ? item.item.discountPrice * item.quantity
+                      ? (item.item.discountPrice * item.quantity
+                        | number : "1.2-2")
                       : "0"
-                    : item.item.price * item.quantity
+                    : (item.item.price * item.quantity | number : "1.2-2")
                 }}
                 $
               </p>
@@ -91,6 +92,9 @@
           }
         </tbody>
       </table>
+      <div class="total-price">
+        Total Price: {{ totalPrice | number : "1.2-2" }} $
+      </div>
     </div>
     } @else {
     <div class="empty-cart">

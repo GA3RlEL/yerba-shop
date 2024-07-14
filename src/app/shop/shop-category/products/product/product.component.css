@@ -55,3 +55,9 @@ img {
 button {
   cursor: pointer;
 }
+
+@media (max-width: 950px) {
+  .product-content p {
+    font-size: 1.75rem;
+  }
+}

@@ -1,8 +1,28 @@
+<div
+  [style.opacity]="showMobileMenu ? 1 : 0"
+  [style.visibility]="showMobileMenu ? 'visible' : 'hidden'"
+  class="outline"
+  (click)="onCloseMenu()"
+></div>
 <div class="wrapper">
   <div class="content">
     @if(type==='yerba-mate'){
-    <aside app-filters></aside>
+    <aside
+      [style]="{
+        opacity: isMobile ? (showMobileMenu ? 1 : 0) : 1,
+        visibility: isMobile
+          ? showMobileMenu
+            ? 'visible'
+            : 'hidden'
+          : 'visible'
+      }"
+      class="desktop-filters"
+      app-filters
+    ></aside>
     }
+    <button (click)="onShowMobileFilters()" class="mobile-button" type="button">
+      <img src="assets/images/shop/products/ui/filter.svg" alt="filter-icon" />
+    </button>
     <app-products />
   </div>
 </div>
